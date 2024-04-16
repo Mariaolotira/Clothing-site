@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Clothing Store - E-commerce Website</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="designer" content="Your Name">
+    <meta name="keywords" content="clothing, e-commerce, fashion, online store">
+    <meta name="description" content="Explore our wide range of fashionable clothing items. Shop now for the latest trends and styles.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+    /* General Styles */
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333; /* Dark background */
+    color: #f4f4f4; /* Light text color */
+    margin: 0;
+    padding-top: 100px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffa500; /* Subdued yellow-orange background */
+    border-bottom: 2px solid #eee;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for a 3D effect */
+}
+
+/* Navbar Brand Styling */
+.navbar-brand {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    color: #007bff;
+}
+
+/* Navigation Items */
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav .nav-link:hover:before,
+.navbar-nav .nav-link:hover:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover:before {
+    top: 0;
+    left: 0;
+}
+
+.navbar-nav .nav-link:hover:after {
+    bottom: 0;
+    left: 0;
+}
+
+/* Main Content Styles */
+.hero {
+    background-color: #ffa500;
+    background-image: url(pexels-robin-1020370.jpg);
+    background-position: center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box shadow for a 3D effect */
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Section Title Styles */
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%; /* Adjust the width of the line */
+    height: 2px;
+    background-color: #007bff;
+    bottom: -10px; /* Adjust the distance from the title */
+}
+
+/* Product Section Styles */
+.products {
+    background-color: #ffffff;
+    padding: 40px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box shadow for a 3D effect */
+}
+
+.row {
+    margin-top: 50px; /* Adjust the value as needed */
+}
+
+.product-item {
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Slightly scale up the item on hover */
+}
+
+/* Add this to your CSS file */
+.social-links a {
+    color: #ffffff; /* Default color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+}
+
+.social-links a:hover {
+    color: #ffa500; /* Color on hover */
+    transform: scale(1.1); /* Slightly scale up the icon on hover */
+}
+
+/* Product Images Styles */
+.product-item img {
+    max-width: 100%; /* Ensure the image does not exceed its container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove any default margins */
+    object-fit: cover; /* Ensure the image covers the entire space without stretching */
+    width: 100%; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+}
+
+.product-item:hover img {
+    transform: scale(0.7.1); /* Slightly scale up the image on hover */
+}
+
+.product-item h3 {
+    color: #000 !important; /* Black text color for the product title with higher specificity */
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-weight: 500; /* Medium font weight for emphasis */
+    font-size: 1.5em; /* Increase font size for better visibility */
+}
+
+.price {
+    color: #000 !important; /* Black text color for the price with higher specificity */
+    font-size: 1.2em; /* Increase font size for better visibility */
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-weight: 600; /* Bold font weight for emphasis */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for a 3D effect */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-weight: 500; /* Medium font weight for emphasis */
+}
+
+.btn-primary:hover {
+    background-color: #ffa500;
+    color: #000;
+    font-size: large;
+}
+
+/* Button Styles */
+.btn-accent-arrow {
+    color: #000; /* White text for contrast */
+    padding: 10px 35px; /* Padding for size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for a modern look */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-weight: 900; /* Medium font weight for emphasis */
+    font-size: 16px; /* Adjust font size as needed */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Display as inline-block for proper alignment */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    position: relative; /* Position relative for the icon */
+    float: right;
+    display: inline-flex; /* Use flexbox to align items */
+    align-items: center;
+}
+
+.btn-accent-arrow i {
+    margin-right: 5px; /* Add margin to the right of the icon */
+    /* ... other styles ... */
+}
+
+.btn-accent-arrow:hover {
+    background-color: #ffa500; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.btn-accent-arrow i {
+    position: absolute; /* Position the icon absolutely within the button */
+    right: 10px; /* Align the icon to the right */
+    top: 50%; /* Center the icon vertically */
+    transform: translateY(-50%); /* Adjust the icon's position */
+}
+
+/* Icon Styles */
+.icon-ns-arrow-right {
+    font-size: 1.2em; /* Adjust the icon size as needed */
+    color: #ffffff; /* Ensure the icon matches the button text color */
+}
+
+/* Subscribe Section Styles */
+.subscribe {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box shadow for a 3D effect */
+}
+
+.subscribe form {
+    margin-top: 20px;
+}
+
+.subscribe input[type="email"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Blog Section Styles */
+.blog {
+    padding: 40px 0;
+    background-color: #f4f4f4; /* Light background for the blog section */
+}
+
+.blog-post {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.blog-post h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Contact Us Section Styles */
+.contact-us {
+    background-color: #f4f4f4; /* Light background for the contact section */
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a box shadow for a 3D effect */
+}
+
+.contact-us h2 {
+    color: #333; /* Dark text color for the section title */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-weight: 500; /* Medium font weight for emphasis */
+    font-size: 2em; /* Increase font size for better visibility */
+    margin-bottom: 20px;
+}
+
+.contact-us p {
+    color: #666; /* Medium-dark text color for the description */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-weight: 300; /* Light font weight for a softer look */
+    font-size: 1.2em; /* Increase font size for better visibility */
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for a 3D effect */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    font-weight: 500; /* Medium font weight for emphasis */
+}
+
+.contact-form button:hover {
+    background-color: #ffa500;
+    color: #000;
+    font-size: large;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Add a box shadow for a 3D effect */
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+</style>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#contact-us">Clothing Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#outwears">Outwears</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#trending">Trending</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#featured">Featured</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#popular">Popular</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#special-offers">Special Offers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Experience the Latest Fashion Trends</h1>
+                        <p>Discover our collection of stylish clothing items.</p>
+                        <a href="order.html" class="btn btn-primary">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="products" id="outwears">
+            <div class="container">
+                <h2 style="color: black;" class="section-title">OUTWEARES</h2>
+                <div class="row">
+                    <!-- Product Item -->
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/outdoor1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/popular1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/special1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending3.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending4.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending2.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <!-- Add more product items as needed -->
+                </div>
+                <div>
+                    <div class="col-md-12">
+    
+                        <div class="btn-wrap align-right">
+                            <a href="#" class="btn-accent-arrow">
+                                <i class="fas fa-arrow-right" style="margin-right: 5px;"></i>
+                                View all products
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="products" id="trending">
+            <div class="container">
+                <h2 style="color: black;" class="section-title">Trending Products</h2>
+                <div class="row">
+                    <!-- Product Item -->
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending2.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending3.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending3.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending4.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending5.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <!-- Add more product items as needed -->
+                </div>
+                <div>
+                    <div class="col-md-12">
+    
+                        <div class="btn-wrap align-right">
+                            <a href="#" class="btn-accent-arrow">
+                                <i class="fas fa-arrow-right" style="margin-right: 5px;"></i>
+                                View all products
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="products" id="featured">
+            <div class="container">
+                <h2 style="color: black;" class="section-title">Featured Products</h2>
+                <div class="row">
+                    <!-- Product Item -->
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/popular1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/special1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending4.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending3.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/outdoor1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending5.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <!-- Add more product items as needed -->
+                </div>
+                <div>
+                    <div class="col-md-12">
+    
+                        <div class="btn-wrap align-right">
+                            <a href="#" class="btn-accent-arrow">
+                                <i class="fas fa-arrow-right" style="margin-right: 5px;"></i>
+                                View all products
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="products" id="popular">
+            <div class="container">
+                <h2 style="color: black;" class="section-title">Popular Products</h2>
+                <div class="row">
+                    <!-- Product Item -->
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/popular1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending3.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending4.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending5.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/outdoor1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending2.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <!-- Add more product items as needed -->
+                </div>
+                <div>
+                    <div class="col-md-12">
+    
+                        <div class="btn-wrap align-right">
+                            <a href="#" class="btn-accent-arrow">
+                                <i class="fas fa-arrow-right" style="margin-right: 5px;"></i>
+                                View all products
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section class="products" id="special-offers">
+            <div class="container">
+                <h2 style="color: black;" class="section-title">Special Offers</h2>
+                <div class="row">
+                    <!-- Product Item -->
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/special1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending3.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending2.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending5.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/trending4.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <img src="trending images/special1.jpg" alt="Product Image" class="img-fluid">
+                            <h3>Product Name</h3>
+                            <p style="color: black;">Product Description</p>
+                            <div class="price">$49.99</div>
+                            <a href="order.html"><button class="btn btn-primary">Add to Cart</button></a>
+                        </div>
+                    </div>
+                    <!-- Add more product items as needed -->
+                </div>
+                <div>
+                    <div class="col-md-12">
+    
+                        <div class="btn-wrap align-right">
+                            <a href="#" class="btn-accent-arrow">
+                                <i class="fas fa-arrow-right" style="margin-right: 5px;"></i>
+                                View all products
+                            </a>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Us Section -->
+<section class="contact-us" id="contact-us">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you. Please fill out the form below to get in touch.</p>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name">
+            <input type="email" name="email" placeholder="Your Email">
+            <textarea name="message" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Clothing Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
